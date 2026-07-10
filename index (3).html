@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Naomi Owolabi — Product Designer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0A0A0A;
+    --lime: #D8FF00;
+    --cream: #F7F6F1;
+    --white: #FFFFFF;
+    --ink-soft: #6E6E68;
+    --line: #E4E2D8;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--black);
+    font-family: 'Inter', -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .dm { font-family: 'DM Sans', sans-serif; }
+
+  /* HERO */
+  .hero {
+    background: var(--black);
+    color: var(--cream);
+    padding: 56px 32px 64px;
+  }
+
+  .hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 48px;
+    font-size: 14px;
+  }
+
+  .hero-nav a {
+    color: var(--cream);
+    text-decoration: none;
+    opacity: 0.7;
+    font-weight: 500;
+  }
+
+  .hero-nav a:hover { opacity: 1; }
+
+  .hero-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .hero-name .mark {
+    width: 12px;
+    height: 12px;
+    background: var(--lime);
+    display: inline-block;
+    border-radius: 3px;
+  }
+
+  .hero-name span.text {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+    color: var(--cream);
+  }
+
+  .hero h1 {
+    font-weight: 900;
+    font-size: clamp(32px, 5vw, 50px);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin: 0 0 24px;
+    max-width: 780px;
+  }
+
+  .hero h1 .hl {
+    background: var(--lime);
+    color: var(--black);
+    padding: 0 10px;
+    display: inline-block;
+  }
+
+  .hero p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #C9C8C0;
+    max-width: 620px;
+    margin: 0;
+  }
+
+  /* WORK */
+  .section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 72px 32px;
+  }
+
+  .section-label {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    margin: 0 0 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .card {
+    background: var(--white);
+    border: 3px solid var(--black);
+    padding: 34px 30px 36px;
+    text-decoration: none;
+    color: var(--black);
+    display: block;
+    position: relative;
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+
+  .card:hover {
+    background: var(--lime);
+    transform: translateY(-2px);
+  }
+
+  .card-num {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+
+  .card:hover .card-num { color: var(--black); }
+
+  .tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 5px 12px;
+    border: 2px solid var(--black);
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+
+  .card:hover .tag { background: var(--black); color: var(--lime); }
+
+  .card-title {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    letter-spacing: -0.01em;
+    margin: 0 0 8px;
+  }
+
+  .card-sub {
+    font-size: 14px;
+    color: var(--ink-soft);
+    font-weight: 600;
+    margin: 0 0 16px;
+  }
+
+  .card:hover .card-sub { color: #2A2A28; }
+
+  .card p.desc {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: #3A3936;
+    margin: 0;
+  }
+
+  .card-arrow {
+    position: absolute;
+    top: 30px;
+    right: 28px;
+    font-size: 24px;
+    font-weight: 700;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  .card:hover .card-arrow { opacity: 1; }
+
+  /* CONTACT */
+  .contact-band {
+    background: var(--black);
+    padding: 56px 32px;
+  }
+
+  .contact-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .contact-inner h2 {
+    color: var(--cream);
+    font-weight: 900;
+    font-size: 26px;
+    margin: 0;
+    max-width: 340px;
+    line-height: 1.15;
+  }
+
+  .contact-links {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .contact-links a {
+    color: var(--lime);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    border-bottom: 2px solid transparent;
+  }
+
+  .contact-links a:hover { border-bottom-color: var(--lime); }
+
+  @media (max-width: 640px) {
+    .grid { grid-template-columns: 1fr; }
+    .hero { padding: 40px 20px 48px; }
+    .section { padding: 48px 20px; }
+    .contact-band { padding: 40px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-nav">
+      <a href="about.html">About →</a>
+    </div>
+    <div class="hero-name"><span class="mark"></span><span class="text">Naomi Owolabi</span></div>
+    <h1>Product designer helping turn complex, high-pressure problems into <span class="hl">simple, useful tools</span>.</h1>
+    <p>I'm especially drawn to problems where a thoughtful design can make a real difference to someone's day-to-day work. I like taking what people know from experience and turning it into products that are calm, clear, and useful in the moments that matter most.</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">Selected work</div>
+
+  <div class="grid">
+
+    <a href="grene.html" class="card">
+      <span class="card-arrow">↗</span>
+      <div class="card-num">01</div>
+      <span class="tag">Company · in pilot</span>
+      <p class="card-title">Grene</p>
+      <p class="card-sub">Compliance automation for CQC-regulated care providers</p>
+      <p class="desc">Carer updates via WhatsApp become compliant documentation, approved with one tap. Built with an engineering co-founder, currently in pilot negotiation with a CQC Outstanding-rated provider.</p>
+    </a>
+
+    <a href="swiftabc.html" class="card">
+      <span class="card-arrow">↗</span>
+      <div class="card-num">02</div>
+      <span class="tag">Practice · self-built</span>
+      <p class="card-title">SwiftABC</p>
+      <p class="card-sub">Behaviour support data capture</p>
+      <p class="desc">Captures incident data safely and quickly after de-escalation, for staff who'd often just been through something difficult themselves. Built from paper through to a working tool.</p>
+    </a>
+
+    <a href="riskr.html" class="card">
+      <span class="card-arrow">↗</span>
+      <div class="card-num">03</div>
+      <span class="tag">Practice · self-built</span>
+      <p class="card-title">Riskr</p>
+      <p class="card-sub">Risk assessment for social care</p>
+      <p class="desc">AI-assisted tool generating risk assessment content for social care settings, cutting the time managers spend producing and revising documentation from scratch.</p>
+    </a>
+
+    <a href="amoke.html" class="card">
+      <span class="card-arrow">↗</span>
+      <div class="card-num">04</div>
+      <span class="tag">Pilot · delivered</span>
+      <p class="card-title">Amoke</p>
+      <p class="card-sub">Paediatric vision care, Jos, Nigeria</p>
+      <p class="desc">Commissioned pilot delivering accessible glasses to children with no access. Delivered, evaluated, and built to explore how scarce resources create outsized impact.</p>
+    </a>
+
+  </div>
+</div>
+
+<div class="contact-band">
+  <div class="contact-inner">
+    <h2>Let's talk about what you're building.</h2>
+    <div class="contact-links">
+      <a href="#">LinkedIn</a>
+      <a href="#">Email</a>
+      <a href="#">Substack</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
